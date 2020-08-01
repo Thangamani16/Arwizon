@@ -18,7 +18,7 @@ public class AmazonApp {
 		Scanner s = new Scanner(System.in);
 		Set<ProductDetails> m = new HashSet<ProductDetails>();
 		while (true) {
-			System.out.println("Enter your Choice");
+			System.out.println("Enter your Choice for operations");
 			int Choice = s.nextInt();
 			switch (Choice) {
 
