@@ -1,26 +1,26 @@
 package com.arwizon.banking.model;
 
 public class CustomerDetails {
-	private static int account_Number;
-	
+	private int account_Number;
+		private static int count= 40;
 	private String name;
 	private  String address;
 	private  String accountType;
-	static {
-		account_Number=999;
-	}
-
+	
 	public CustomerDetails() {
-		account_Number++;
+		count++;
 	}
 
-	public static int getAccount_Number() {
+	public static int getCount() {
+		return count;
+	}
+
+	public int getAccount_Number() {
 		return account_Number;
-		
 	}
 
-	public static void setAccount_Number(int account_Number) {
-		CustomerDetails.account_Number = account_Number;
+	public  void setAccount_Number(int count) {
+	 this.account_Number = count;
 	}
 
 	public String getName() {

@@ -1,6 +1,8 @@
 package com.arwizon.shopping.model;
 
-public class Product {
+//import java.util.List;
+
+public class Product implements Comparable<Product> {
 	
 	private String name;
 	private String description;
@@ -13,6 +15,11 @@ public class Product {
 	{
 		productid = 99;
 	}
+	public Product()
+	{
+		productid++;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -57,7 +64,16 @@ public class Product {
 	}
 	@Override
 	public String toString() {
-		return "Product [productid ="+ productid +"name=" + name + ", description=" + description + ", imgurl=" + imgurl + ", units=" + units
+		return "Product [name=" + name + ", description=" + description + ", imgurl=" + imgurl + ", units=" + units
 				+ ", category=" + category + ", manuf=" + manuf + "]";
 	}
-}
+	@Override
+	public int compareTo(Product o) {
+		if(this.getName().compareTo(o.getName())>0)
+			return 1;
+		else if(this.getName().compareTo(o.getName())<0)
+				return -1;
+		else
+			return 0;
+	}
+	}
