@@ -25,7 +25,7 @@ public class AmazonApp {
 			case 1:
 				String name = null;
 				while (true) {
-					System.out.println("Enter product name");
+					System.out.println("Enter Product Name");
 					name = s.next();
 					try {
 						Utilities.nameMatch(name);
