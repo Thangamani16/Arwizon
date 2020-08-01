@@ -83,7 +83,7 @@ public class ServiceInterfaceImp implements ServiceInterface {
 		Connection con = ConnectionClass.Connectiondb();
 		try {
 
-			String sql = "select * from ProductList where name=?";
+			String sql = "select * from Amazenlist where name=?";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1, name);
 			ResultSet rs=stmt.executeQuery();
@@ -119,7 +119,7 @@ public class ServiceInterfaceImp implements ServiceInterface {
 	@Override
 	public void deleteProduct(int productId) {
 
-		String sql="delete from ProductList where productId=?";
+		String sql="delete from AmazenList where productId=?";
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setInt(1, productId);
@@ -133,7 +133,7 @@ public class ServiceInterfaceImp implements ServiceInterface {
 	@Override
 	public void updateProduct(int productId, int noOfUnits) {
 		
-		String sql="update ProductList set noOfUnits=? where productId=?";
+		String sql="update AmazenList set noOfUnits=? where productId=?";
 		try {
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setInt(2, productId);
